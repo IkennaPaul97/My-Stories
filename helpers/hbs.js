@@ -28,5 +28,17 @@ module.exports = {
         }else{
             return ''
         }
+    },
+    select: function(selected, options){
+        return options
+        .fn(this)
+        .replace(
+            new RegExp(' values"' + selected + '"'),
+            '$& selected="selected"'
+        )
+        .replace(
+            new RegExp(' values"' + selected + '"'),
+            ' selected="selected"$&'
+        )
     }
 }
